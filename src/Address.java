@@ -4,7 +4,7 @@ import lombok.*;
 @NoArgsConstructor
 @AllArgsConstructor
 @Getter @Setter
-@EqualsAndHashCode
+@EqualsAndHashCode //compare Address using all fields
 
 public class Address {
     private int id;
