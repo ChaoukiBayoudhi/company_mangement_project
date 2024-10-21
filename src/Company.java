@@ -14,7 +14,7 @@ public class Company {
     private String website;
     private ArrayList<Departement> departements=new ArrayList();
     //Version 1
-    private boolean findDepartement(String name){
+    private boolean findDepartment(String name){
         int i=0;
         boolean found=false;
 //        while(i<departements.size() && !found)

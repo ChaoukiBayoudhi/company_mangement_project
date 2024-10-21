@@ -1,15 +1,18 @@
 import lombok.*;
 
 import java.util.ArrayList;
-@ToString
-@NoArgsConstructor
-@AllArgsConstructor
-@Getter
-@Setter
-@EqualsAndHashCode
+//@ToString
+//@NoArgsConstructor
+//@AllArgsConstructor
+//@Getter
+//@Setter
+//@EqualsAndHashCode
+//@RequiredArgsConstructor //generate a constructor with fields that are required(annotated with @NonNull)
+@Data
 public class Departement {
     //attributes
     @EqualsAndHashCode.Include
+    @NonNull //the name is required
     private String name;
     private String description;
     private ArrayList<Employee> lstEmployees=new ArrayList();
@@ -52,4 +55,13 @@ public class Departement {
 //    public void setLstEmployees(ArrayList<Employee> lstEmployees) {
 //        this.lstEmployees = lstEmployees;
 //    }
+
+    public int findEmployee(int id) {
+        Employee e=new Employee();
+        e.setId(id);
+        return lstEmployees.indexOf(e);
+    }
+    public boolean addEmployee(Employee e) {
+        return  lstEmployees.add(e);
+    }
 }

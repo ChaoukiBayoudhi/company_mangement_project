@@ -8,7 +8,9 @@ import java.time.LocalDate;
 @AllArgsConstructor
 @Getter
 @Setter
+@EqualsAndHashCode
 public class Employee {
+    @EqualsAndHashCode.Include
     private long id;
     private String name;
     private String familyName;

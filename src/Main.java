@@ -24,15 +24,20 @@ public class Main {
 
         Address a1=new Address();
         a1.setId(1);
-        a1.setHouseNumber(11);
+        a1.setHouseNumber(15);
+        a1.setStreetName("Flowers street");
+        a1.setZipCode("2000");
         a1.setCity("Tunis");
         a1.setCountry("Tunisia");
 
         Address a2=new Address();
         a2.setId(2);
         a2.setHouseNumber(11);
+        a2.setStreetName("Flowers street");
+        a2.setZipCode("2000");
         a2.setCity("Tunis");
         a2.setCountry("Tunisia");
+
 
         //compare a1 and a2 using equals
         if(a1.equals(a2))
@@ -42,6 +47,9 @@ public class Main {
 
         System.out.println("a1 : " + a1);
         System.out.println("a2 : " + a2);
+
+        Departement d1=new Departement("GRH");// using the RequiredArgsConstructor
+        System.out.println(d1);
 
     }
 }
