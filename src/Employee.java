@@ -18,5 +18,6 @@ public class Employee {
     private LocalDate hiredate;
     private LocalDate birthday;
     private double salary;
+    //nested field
     private Departement departement;
 }

@@ -37,6 +37,46 @@ public class Company {
     }
 
         public boolean addDepartment(Departement dep) {
-        return departements.add(dep);
+            return departements.add(dep);
+        }
+
+     public Employee  findEmployee(int id){
+         int i=0;
+         Employee foundedEmp=null;
+
+         while(i<departements.size() && foundedEmp!=null){//loop through  departments
+             int j=0;
+             while(j<departements.get(i).getLstEmployees().size() && foundedEmp!=null){
+                 if(departements.get(i).getLstEmployees().get(j).getId()==id){
+                     foundedEmp=departements.get(i).getLstEmployees().get(j);
+                 }
+                 else
+                     j++;
+             }
+             i++;
+         }
+         return foundedEmp;
+    }
+    public Employee  findEmployee_v2(int id){
+        int i=0;
+        Employee foundedEmp=null;
+
+        while(i<departements.size() && foundedEmp!=null){//loop through  departments
+
+            int j=departements.get(i).findEmployee(id);
+            if(j!=-1)
+                    foundedEmp=departements.get(i).getLstEmployees().get(j);
+
+            i++;
+        }
+        return foundedEmp;
+    }
+
+    public  boolean transferEmployee(int employeeId, String newDeptName){
+
+    }
+
+    public  boolean transferEmployee(Employee employee, Departement department){
+
     }
 }
