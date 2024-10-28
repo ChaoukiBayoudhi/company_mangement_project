@@ -14,18 +14,19 @@ public class Company {
     private String website;
     private ArrayList<Departement> departements=new ArrayList();
     //Version 1
-    private boolean findDepartment(String name){
+    private Departement findDepartment(String name){
         int i=0;
-        boolean found=false;
+        Departement found=null;
 //        while(i<departements.size() && !found)
 //        {
 //            if(departements.get(i).getName().equals(name))
 //                found=true;
 //            i++;
 //        }
-        while(i<departements.size() && !found)
+        while(i<departements.size() && found!=null)
         {
-            found=departements.get(i).getName().equals(name);
+            if(departements.get(i).getName().equalsIgnoreCase(name))
+                found=departements.get(i);
             i++;
         }
         return found;
@@ -73,6 +74,7 @@ public class Company {
     }
 
     public  boolean transferEmployee(int employeeId, String newDeptName){
+        Employee employee=findEmployee_v2(employeeId);
 
     }
 
