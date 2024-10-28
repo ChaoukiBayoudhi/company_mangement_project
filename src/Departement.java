@@ -1,6 +1,8 @@
 import lombok.*;
 
 import java.util.ArrayList;
+import java.util.Scanner;
+
 //@ToString
 //@NoArgsConstructor
 //@AllArgsConstructor
@@ -63,5 +65,13 @@ public class Departement {
     }
     public boolean addEmployee(Employee e) {
         return  lstEmployees.add(e);
+    }
+    public void getDepartment(){
+        Scanner sc=new Scanner(System.in);
+        System.out.print("Enter the department name : ");
+        name=sc.nextLine();
+        System.out.print("Enter the department description : ");
+        description=sc.nextLine();
+
     }
 }

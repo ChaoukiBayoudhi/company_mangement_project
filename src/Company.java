@@ -37,10 +37,6 @@ public class Company {
         return departements.contains(dep);
     }
 
-        public boolean addDepartment(Departement dep) {
-            return departements.add(dep);
-        }
-
      public Employee  findEmployee(int id){
          int i=0;
          Employee foundedEmp=null;
@@ -75,10 +71,29 @@ public class Company {
 
     public  boolean transferEmployee(int employeeId, String newDeptName){
         Employee employee=findEmployee_v2(employeeId);
-
+        if(employee==null)
+            return false;
+        Departement newDept=findDepartment(newDeptName);
+        if(newDept==null)
+            return false;
+        Departement oldDept=employee.getDepartement();
+        oldDept.getLstEmployees().remove(employee);
+        newDept.getLstEmployees().add(employee);
+        employee.setDepartement(newDept);
+        return true;
     }
 
-    public  boolean transferEmployee(Employee employee, Departement department){
-
+    public  boolean transferEmployee(Employee employee, Departement newDept){
+        Departement oldDept=employee.getDepartement();
+        boolean result=oldDept.getLstEmployees().remove(employee);
+        result=newDept.getLstEmployees().add(employee);
+        employee.setDepartement(newDept);
+        return result;
+    }
+    public boolean addDepartment(Departement dept){
+        if(departements.contains(dept))
+            return false;
+        departements.add(dept);
+        return true;
     }
 }
