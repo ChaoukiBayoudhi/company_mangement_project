@@ -23,7 +23,7 @@ public class Company {
 //                found=true;
 //            i++;
 //        }
-        while(i<departements.size() && found!=null)
+        while(i<departements.size() && found==null)
         {
             if(departements.get(i).getName().equalsIgnoreCase(name))
                 found=departements.get(i);
