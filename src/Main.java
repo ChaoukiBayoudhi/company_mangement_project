@@ -114,8 +114,13 @@ public class Main {
                     System.out.println("Enter the name of the department");
                     nameDep=sc.nextLine();
                     Departement dept=company.findDepartment(nameDep);
-                    dept.addEmployee(employee);
-                    System.out.println("Employee was added successfully");
+                    if( dept != null) {
+                        dept.addEmployee(employee);
+                        System.out.println("Employee was added successfully");
+                    }
+                    else {
+                        System.out.println("Department not found.");
+                    }
                     break;
 
             }
