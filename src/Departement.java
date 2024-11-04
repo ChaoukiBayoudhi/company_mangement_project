@@ -3,14 +3,14 @@ import lombok.*;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-//@ToString
-//@NoArgsConstructor
-//@AllArgsConstructor
-//@Getter
-//@Setter
-//@EqualsAndHashCode
-//@RequiredArgsConstructor //generate a constructor with fields that are required(annotated with @NonNull)
-@Data
+@ToString
+@NoArgsConstructor
+@AllArgsConstructor
+@Getter
+@Setter
+@EqualsAndHashCode(onlyExplicitlyIncluded = true)
+@RequiredArgsConstructor //generate a constructor with fields that are required(annotated with @NonNull)
+//@Data
 public class Departement {
     //attributes
     @EqualsAndHashCode.Include
@@ -58,7 +58,7 @@ public class Departement {
 //        this.lstEmployees = lstEmployees;
 //    }
 
-    public int findEmployee(int id) {
+    public int findEmployee(long id) {
         Employee e=new Employee();
         e.setId(id);
         return lstEmployees.indexOf(e);

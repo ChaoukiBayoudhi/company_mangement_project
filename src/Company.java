@@ -14,7 +14,7 @@ public class Company {
     private String website;
     private ArrayList<Departement> departements=new ArrayList();
     //Version 1
-    private Departement findDepartment(String name){
+    public Departement findDepartment(String name){
         int i=0;
         Departement found=null;
 //        while(i<departements.size() && !found)
@@ -54,7 +54,7 @@ public class Company {
          }
          return foundedEmp;
     }
-    public Employee  findEmployee_v2(int id){
+    public Employee  findEmployee_v2(long id){
         int i=0;
         Employee foundedEmp=null;
 
@@ -69,7 +69,7 @@ public class Company {
         return foundedEmp;
     }
 
-    public  boolean transferEmployee(int employeeId, String newDeptName){
+    public  boolean transferEmployee(long employeeId, String newDeptName){
         Employee employee=findEmployee_v2(employeeId);
         if(employee==null)
             return false;
